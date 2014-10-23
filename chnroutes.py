@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import re
 import urllib2
@@ -81,6 +82,7 @@ def generate_mac(metric):
     route add 10.0.0.0/8 "${OLDGW}"
     route add 172.16.0.0/12 "${OLDGW}"
     route add 192.168.0.0/16 "${OLDGW}"
+    route add 202.55.12.17 "${OLDGW}" #搜狐视频
     """)
     
     downscript_header=textwrap.dedent("""\
@@ -96,6 +98,7 @@ def generate_mac(metric):
     route delete 10.0.0.0/8 "${OLDGW}"
     route delete 172.16.0.0/12 "${OLDGW}"
     route delete 192.168.0.0/16 "${OLDGW}"
+    route delete 202.55.12.17 "${OLDGW}" #搜狐视频
     """)
     
     upfile=open('ip-up','w')
